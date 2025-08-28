@@ -1,6 +1,3 @@
-------------------------------------------------------
--- TABLAS DE SOPORTE (Catálogos / Paramétricas)
-------------------------------------------------------
 CREATE TABLE ESTADO_CIVIL(
     id_estado_civil NUMBER(38),
     nombre VARCHAR2(50),
@@ -76,9 +73,6 @@ CREATE TABLE TIPO_CLIENTE(
     PRIMARY KEY (id_tipo_cliente)
 );
 
-------------------------------------------------------
--- PERSONA, CLIENTE, EMPLEADO
-------------------------------------------------------
 CREATE TABLE PERSONA(
     id_persona NUMBER(38),
     nombres VARCHAR2(100) NOT NULL,
@@ -167,9 +161,6 @@ CREATE TABLE HORARIO_EMPLEADO(
     REFERENCES EMPLEADO(id_empleado)
 );
 
-------------------------------------------------------
--- MESAS Y RESERVAS
-------------------------------------------------------
 CREATE TABLE MESA(
     id_mesa NUMBER(38),
     capacidad NUMBER,
@@ -215,9 +206,6 @@ CREATE TABLE RESERVA_MESA(
     REFERENCES MESA(id_mesa)
 );
 
-------------------------------------------------------
--- PEDIDOS Y DETALLES
-------------------------------------------------------
 CREATE TABLE PEDIDO(
     id_pedido NUMBER(38),
     fecha_pedido TIMESTAMP,
@@ -277,9 +265,6 @@ CREATE TABLE DETALLE_PEDIDO(
     REFERENCES PRODUCTO(id_producto)
 );
 
-------------------------------------------------------
--- PRODUCTOS Y PROMOCIONES
-------------------------------------------------------
 CREATE TABLE PRODUCTO(
     id_producto NUMBER(38),
     nombre VARCHAR2(100) NOT NULL,
